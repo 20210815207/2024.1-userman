@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户管理</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="" th:href="@{/static/css/user.css}">
+
+
+</head>
+<body>
+<div class="container">
+    <input type="text" id="ctx" hidden="hidden" th:value="${#request.getContextPath()}">
+    <div class="search">
+        <div class="input-group col-md-8">
+            <button class="btn btn-success" type="button" id="add">
+                添加
+            </button>
+            <input class="form-control" type="text" id="username" placeholder="请输入用户名，按回车键">
+            <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" id="search">
+                            查询
+                        </button>
+                    </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet">
+                <div class="category-list">
+                    <table class="table table-striped table-hover" id="dataTable">
+                        <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>邮箱</th>
+                            <th>姓名</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8" align="center" style="position: fixed; bottom: 20%;">
+            <!-- 分页控件，标签必须是<ul> -->
+            <ul id="pageButton" class="pagination-centered"></ul>
+        </div>
+    </div>
+</div>
+
+<!--编辑框-->
+<div class="modal fade" id="modify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">修改用户</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="m_id" hidden="hidden">
+                <div class="form-group">
+                    <label class="control-label" for="m_username">用户名：</label>
+                    <input type="text" class="form-control" id="m_username" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="m_password">密码：</label>
+                    <input type="text" class="form-control" id="m_password" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="m_email">邮箱：</label>
+                    <input type="text" class="form-control" id="m_email" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="m_truename">姓名：</label>
+                    <input type="text" class="form-control" id="m_truename" placeholder="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="modify()">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+<script th:src="@{/js/bootstrap-paginator.js}"></script>
+<script src="../js/util.js" th:src="@{/js/util.js}"></script>
+<script src="../js/user.js" th:src="@{/js/user.js}"></script>
+</body>
+</html>
