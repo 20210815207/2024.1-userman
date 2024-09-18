@@ -1,0 +1,14 @@
+cn\edu\cucn\usermanager\controller\UserController.class
+cn\edu\cucn\usermanager\service\UserService.class
+cn\edu\cucn\usermanager\config\MyMvcConfig.class
+cn\edu\cucn\usermanager\common\ErrorStatus.class
+cn\edu\cucn\usermanager\model\User.class
+cn\edu\cucn\usermanager\config\LoginFilter.class
+cn\edu\cucn\usermanager\config\MybatisPlusConfig.class
+cn\edu\cucn\usermanager\common\Result.class
+cn\edu\cucn\usermanager\mapper\UserMapper.class
+cn\edu\cucn\usermanager\common\ResultUtil.class
+cn\edu\cucn\usermanager\BootstrapApplication.class
+cn\edu\cucn\usermanager\config\MybatisPlusMetaObjectHandler.class
+cn\edu\cucn\usermanager\service\UserServiceImpl.class
+cn\edu\cucn\usermanager\controller\HomeController.class
